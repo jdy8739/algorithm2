@@ -10,13 +10,11 @@ let count = 1;
 let answer = 0;
 
 while (current > target) {
-  const arr = String(current).split("");
-  const lastNumber = arr[arr.length - 1];
-
   if (current % 2 === 0) {
     current /= 2;
     count++;
-  } else if (lastNumber === "1") {
+  } else if (current % 10 === 1) {
+    const arr = String(current).split("");
     arr.pop();
     current = Number(arr.join(""));
     count++;
